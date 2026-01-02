@@ -1,0 +1,176 @@
+.packages {
+  padding: 6rem 2rem;
+  background: #fff;
+}
+
+.packages-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.package-note {
+  font-size: 0.95rem;
+  color: #888;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.package-card {
+  background: #f9f9f9;
+  padding: 2.5rem 2rem;
+  border-radius: 15px;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.package-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  border-color: #ff6b35;
+}
+
+.package-card.popular {
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+  color: white;
+  transform: scale(1.05);
+  border: none;
+}
+
+.package-card.popular:hover {
+  transform: scale(1.08) translateY(-10px);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1a1a;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.package-name {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.package-card.popular .package-name {
+  color: white;
+}
+
+.package-price {
+  margin-bottom: 2rem;
+}
+
+.price {
+  font-size: 3rem;
+  font-weight: 700;
+  display: block;
+  color: #ff6b35;
+}
+
+.package-card.popular .price {
+  color: white;
+}
+
+.unit {
+  font-size: 1rem;
+  color: #666;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.package-card.popular .unit {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.package-features {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.package-features li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.package-card.popular .package-features li {
+  border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+
+.check-icon {
+  color: #ff6b35;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.package-card.popular .check-icon {
+  color: white;
+}
+
+.package-btn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: #ff6b35;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.package-card.popular .package-btn {
+  background: white;
+  color: #ff6b35;
+}
+
+.package-btn:hover {
+  background: #ff8555;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+}
+
+.package-card.popular .package-btn:hover {
+  background: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+  .packages {
+    padding: 4rem 1rem;
+  }
+
+  .packages-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .package-card.popular {
+    transform: scale(1);
+  }
+
+  .package-card.popular:hover {
+    transform: translateY(-10px);
+  }
+}
