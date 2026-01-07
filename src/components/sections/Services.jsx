@@ -5,33 +5,23 @@ const Services = () => {
   const services = [
     {
       icon: 'fa-solid fa-house',
-      title: 'House Construction',
-      description: 'Complete house construction services from foundation to finishing'
+      title: 'Residential Construction',
+      description: 'Complete residential construction services from foundation to finishing with quality craftsmanship'
     },
     {
       icon: 'fa-solid fa-building',
-      title: 'Building Construction',
-      description: 'Commercial and residential building construction with modern techniques'
+      title: 'Commercial Construction',
+      description: 'Professional commercial building construction with modern techniques and standards'
     },
     {
       icon: 'fa-solid fa-compass-drafting',
-      title: 'Architectural Planning',
-      description: 'Professional architectural design and planning services'
+      title: 'Architectural Designing',
+      description: 'Innovative architectural design and planning services tailored to your vision'
     },
     {
-      icon: 'fa-solid fa-couch',
-      title: 'Interior Design',
-      description: 'Beautiful and functional interior design solutions'
-    },
-    {
-      icon: 'fa-solid fa-wrench',
-      title: 'Renovation',
-      description: 'Expert renovation and remodeling for homes and offices'
-    },
-    {
-      icon: 'fa-solid fa-bolt',
-      title: 'Electrical Works',
-      description: 'Complete electrical installation and maintenance services'
+      icon: 'fa-solid fa-ruler-combined',
+      title: 'Structural Design',
+      description: 'Expert structural design and engineering solutions for safe and durable buildings'
     }
   ];
 

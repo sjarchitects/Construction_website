@@ -15,13 +15,10 @@ const Hero = () => {
       <div className="hero-overlay"></div>
       <div className="hero-content">
         <h1 className="hero-title">
-          Welcome to <span>IMPRIMIS Construction</span>
+          Welcome to <span>IMPRIMIS BUILDERS DESIGNS &  CONSTRUCTIONS</span>
         </h1>
         <p className="hero-subtitle">
-          We build your dream home at affordable cost
-        </p>
-        <p className="hero-description">
-          Quality construction services with professional excellence and customer satisfaction
+          We build your love 
         </p>
         <button className="hero-btn" onClick={scrollToContact}>
           Get Started

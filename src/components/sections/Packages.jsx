@@ -2,53 +2,31 @@ import React from 'react';
 import '../../styles/Packages.css';
 
 const Packages = () => {
+  const scrollToContact = () => {
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const packages = [
     {
       name: 'Basic Package',
-      price: '₹1,499',
-      unit: 'per sq.ft',
-      features: [
-        'Basic Construction Materials',
-        'Standard Finishing',
-        'Basic Electrical & Plumbing',
-        'Flooring & Tiling',
-        'Painting',
-        '1 Year Warranty'
-      ],
-      popular: false
+      price: '₹1899/Sqft',
+      icon: 'fas fa-home',
+      subtitle: ''
+    },
+    {
+      name: 'Standard Package',
+      price: '₹2299/Sqft',
+      icon: 'fas fa-building',
+      subtitle: ''
     },
     {
       name: 'Premium Package',
-      price: '₹1,899',
-      unit: 'per sq.ft',
-      features: [
-        'Premium Construction Materials',
-        'High-Quality Finishing',
-        'Advanced Electrical & Plumbing',
-        'Designer Flooring & Tiling',
-        'Premium Painting',
-        'Modular Kitchen',
-        'False Ceiling',
-        '2 Years Warranty'
-      ],
-      popular: true
-    },
-    {
-      name: 'Luxury Package',
-      price: '₹2,399',
-      unit: 'per sq.ft',
-      features: [
-        'Luxury Construction Materials',
-        'Premium Finishing',
-        'Smart Home Integration',
-        'Imported Flooring & Tiles',
-        'Designer Painting',
-        'Premium Modular Kitchen',
-        'Designer False Ceiling',
-        'Home Automation',
-        '5 Years Warranty'
-      ],
-      popular: false
+      price: '₹3299/Sqft',
+      icon: 'fas fa-crown',
+      subtitle: ''
     }
   ];
 
@@ -68,22 +46,14 @@ const Packages = () => {
         
         <div className="packages-grid">
           {packages.map((pkg, index) => (
-            <div key={index} className={`package-card ${pkg.popular ? 'popular' : ''}`}>
-              {pkg.popular && <div className="popular-badge">Most Popular</div>}
-              <h3 className="package-name">{pkg.name}</h3>
-              <div className="package-price">
-                <span className="price">{pkg.price}</span>
-                <span className="unit">{pkg.unit}</span>
+            <div key={index} className="package-card">
+              <div className="package-icon">
+                <i className={pkg.icon}></i>
               </div>
-              <ul className="package-features">
-                {pkg.features.map((feature, idx) => (
-                  <li key={idx}>
-                    <span className="check-icon">✓</span>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <button className="package-btn">Choose Package</button>
+              <h3 className="package-name">{pkg.name}</h3>
+              <div className="package-price">Starts @ {pkg.price}</div>
+              {pkg.subtitle && <p className="package-subtitle">{pkg.subtitle}</p>}
+              <button className="package-btn" onClick={scrollToContact}>KNOW MORE</button>
             </div>
           ))}
         </div>

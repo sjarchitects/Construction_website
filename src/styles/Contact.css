@@ -1,5 +1,5 @@
 .contact {
-  padding: 6rem 2rem;
+  padding: 2rem 2rem;
   background: #f9f9f9;
 }
 
@@ -41,7 +41,7 @@
 .info-icon {
   font-size: 2rem;
   min-width: 40px;
-  color: #ff6b35;
+  color: #D4AF37;
 }
 
 .whatsapp-btn {
@@ -71,7 +71,7 @@
 
 .info-item h4 {
   font-size: 1.2rem;
-  color: #ff6b35;
+  color: #D4AF37;
   margin-bottom: 0.5rem;
 }
 
@@ -105,7 +105,7 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #ff6b35;
+  border-color: #D4AF37;
 }
 
 .form-group textarea {
@@ -118,7 +118,7 @@
   padding: 1rem 2rem;
   font-size: 1.1rem;
   font-weight: 600;
-  background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+  background: linear-gradient(135deg, #D4AF37 0%, #C9A961 100%);
   color: white;
   border: none;
   border-radius: 50px;
@@ -148,7 +148,7 @@
 
 .submit-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
 }
 
 @media (max-width: 968px) {

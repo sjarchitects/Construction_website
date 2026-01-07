@@ -1,159 +1,110 @@
 .packages {
-  padding: 6rem 2rem;
-  background: #fff;
+  padding: 2rem 2rem;
+  background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
 }
 
 .packages-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
+}
+
+.packages .section-title {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.packages .title-underline {
+  background: #D4AF37;
+}
+
+.packages .section-description {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .package-note {
   font-size: 0.95rem;
-  color: #888;
+  color: rgba(255, 255, 255, 0.7);
   font-style: italic;
   margin-top: 0.5rem;
 }
 
 .packages-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
 }
 
 .package-card {
-  background: #f9f9f9;
-  padding: 2.5rem 2rem;
-  border-radius: 15px;
+  background: #f0f0f0;
+  padding: 3rem 2rem;
+  border-radius: 20px;
   text-align: center;
   position: relative;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
+  transition: transform 0.3s ease;
 }
 
 .package-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-  border-color: #ff6b35;
 }
 
-.package-card.popular {
-  background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
-  color: white;
-  transform: scale(1.05);
-  border: none;
+.package-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  border: 3px solid #D4AF37;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.package-card.popular:hover {
-  transform: scale(1.08) translateY(-10px);
-}
-
-.popular-badge {
-  position: absolute;
-  top: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #1a1a1a;
-  color: white;
-  padding: 0.5rem 1.5rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
+.package-icon i {
+  font-size: 2.5rem;
+  color: #D4AF37;
 }
 
 .package-name {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
   font-weight: 700;
-}
-
-.package-card.popular .package-name {
-  color: white;
+  color: #2d3748;
+  text-transform: uppercase;
 }
 
 .package-price {
-  margin-bottom: 2rem;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #4a5568;
+  font-weight: 600;
 }
 
-.price {
-  font-size: 3rem;
-  font-weight: 700;
-  display: block;
-  color: #ff6b35;
-}
-
-.package-card.popular .price {
-  color: white;
-}
-
-.unit {
-  font-size: 1rem;
+.package-subtitle {
+  font-size: 0.95rem;
   color: #666;
-  display: block;
-  margin-top: 0.5rem;
-}
-
-.package-card.popular .unit {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.package-features {
-  list-style: none;
-  padding: 0;
-  margin: 2rem 0;
-  text-align: left;
-}
-
-.package-features li {
-  padding: 0.8rem 0;
-  border-bottom: 1px solid #ddd;
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.package-card.popular .package-features li {
-  border-bottom-color: rgba(255, 255, 255, 0.3);
-}
-
-.check-icon {
-  color: #ff6b35;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.package-card.popular .check-icon {
-  color: white;
+  margin-bottom: 1.5rem;
+  min-height: 20px;
 }
 
 .package-btn {
-  width: 100%;
-  padding: 1rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  background: #ff6b35;
-  color: white;
+  padding: 0.8rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  background: #D4AF37;
+  color: #2d3748;
   border: none;
-  border-radius: 50px;
+  border-radius: 30px;
   cursor: pointer;
-  transition: all 0.3s ease;
   margin-top: 1rem;
-}
-
-.package-card.popular .package-btn {
-  background: white;
-  color: #ff6b35;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .package-btn:hover {
-  background: #ff8555;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
-}
-
-.package-card.popular .package-btn:hover {
-  background: #f0f0f0;
+  background: #C9A961;
+  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
@@ -164,13 +115,5 @@
   .packages-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }
-
-  .package-card.popular {
-    transform: scale(1);
-  }
-
-  .package-card.popular:hover {
-    transform: translateY(-10px);
   }
 }

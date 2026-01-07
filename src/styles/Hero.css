@@ -40,7 +40,7 @@
 }
 
 .hero-title span {
-  color: #ff6b35;
+  color: #D4AF37;
   display: block;
   margin-top: 0.5rem;
 }
@@ -65,19 +65,19 @@
   padding: 1rem 3rem;
   font-size: 1.1rem;
   font-weight: 600;
-  background: #ff6b35;
+  background: #D4AF37;
   color: white;
   border: none;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
 }
 
 .hero-btn:hover {
-  background: #ff8555;
+  background: #C9A961;
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.6);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
 }
 
 @keyframes fadeInUp {

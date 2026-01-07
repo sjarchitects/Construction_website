@@ -1,0 +1,179 @@
+.legal-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.legal-modal-content {
+  background: white;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  margin: auto;
+}
+
+.legal-modal-close {
+  position: sticky;
+  top: 0;
+  right: 0;
+  float: right;
+  background: #ff6b35;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 20px 0 0;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.legal-modal-close:hover {
+  background: #e55a2b;
+  transform: rotate(90deg);
+}
+
+.legal-content {
+  padding: 40px 60px 60px;
+}
+
+.legal-content h1 {
+  color: #1a1a1a;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  border-bottom: 3px solid #ff6b35;
+  padding-bottom: 15px;
+}
+
+.last-updated {
+  color: #666;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+.legal-content section {
+  margin-bottom: 35px;
+}
+
+.legal-content h2 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  margin-top: 25px;
+}
+
+.legal-content h3 {
+  color: #34495e;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.legal-content p {
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.legal-content ul {
+  margin-left: 25px;
+  margin-bottom: 15px;
+}
+
+.legal-content li {
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+.legal-content strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Scrollbar Styling */
+.legal-modal-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+.legal-modal-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 0 12px 12px 0;
+}
+
+.legal-modal-content::-webkit-scrollbar-thumb {
+  background: #ff6b35;
+  border-radius: 5px;
+}
+
+.legal-modal-content::-webkit-scrollbar-thumb:hover {
+  background: #e55a2b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .legal-content {
+    padding: 30px 30px 40px;
+  }
+
+  .legal-content h1 {
+    font-size: 2rem;
+  }
+
+  .legal-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .legal-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .legal-modal-close {
+    width: 35px;
+    height: 35px;
+    font-size: 24px;
+    margin: 15px 15px 0 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .legal-modal-overlay {
+    padding: 10px;
+  }
+
+  .legal-content {
+    padding: 20px 20px 30px;
+  }
+
+  .legal-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .legal-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .legal-content ul {
+    margin-left: 20px;
+  }
+}

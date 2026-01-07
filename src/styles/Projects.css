@@ -1,5 +1,5 @@
 .projects {
-  padding: 6rem 2rem;
+  padding: 2rem 2rem;
   background: #f9f9f9;
 }
 
@@ -29,14 +29,14 @@
 }
 
 .filter-btn:hover {
-  border-color: #ff6b35;
-  color: #ff6b35;
+  border-color: #D4AF37;
+  color: #D4AF37;
 }
 
 .filter-btn.active {
-  background: #ff6b35;
+  background: #D4AF37;
   color: #fff;
-  border-color: #ff6b35;
+  border-color: #D4AF37;
 }
 
 .projects-grid {
@@ -96,7 +96,7 @@
 
 .project-category {
   display: inline-block;
-  background: #ff6b35;
+  background: #D4AF37;
   color: white;
   padding: 0.3rem 1rem;
   border-radius: 20px;
@@ -122,7 +122,39 @@
 }
 
 .project-info i {
-  color: #ff6b35;
+  color: #D4AF37;
+}
+
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.load-more-btn {
+  padding: 0.5rem 3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #D4AF37 0%, #C9A961 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.load-more-btn:hover {
+  background: linear-gradient(135deg, #C9A961 0%, #D4AF37 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+.load-more-btn i {
+  font-size: 1rem;
 }
 
 @media (max-width: 768px) {

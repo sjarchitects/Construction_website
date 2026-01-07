@@ -55,10 +55,10 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ff6b35;
+  background: #D4AF37;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff8555;
+  background: #C9A961;
 }

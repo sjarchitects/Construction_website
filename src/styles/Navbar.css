@@ -50,7 +50,7 @@
 }
 
 .logo span {
-  color: #ff6b35;
+  color: #D4AF37;
   font-weight: 400;
 }
 
@@ -77,12 +77,12 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: #ff6b35;
+  background: #D4AF37;
   transition: width 0.3s ease;
 }
 
 .nav-link:hover {
-  color: #ff6b35;
+  color: #D4AF37;
 }
 
 .nav-link:hover::after {

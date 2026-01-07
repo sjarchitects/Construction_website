@@ -4,61 +4,93 @@ import projectImage from '../../assets/P1.webp';
 
 const Projects = () => {
   const [filter, setFilter] = useState('All');
+  const [showAll, setShowAll] = useState(false);
+  const [itemsToShow, setItemsToShow] = useState(6);
 
   const projects = [
     {
       id: 1,
       image: projectImage,
-      title: 'Modern Villa',
-      category: 'Residential',
+      title: 'Modern Villa Design',
+      category: 'Plan and Elevation',
       location: 'Bangalore',
       area: '3200 sq.ft'
     },
     {
       id: 2,
       image: projectImage,
-      title: 'Luxury Apartment',
-      category: 'Residential',
+      title: 'Luxury Home Plan',
+      category: 'Plan and Elevation',
       location: 'Hyderabad',
       area: '2800 sq.ft'
     },
     {
       id: 3,
       image: projectImage,
-      title: 'Contemporary Home',
-      category: 'Residential',
+      title: 'Contemporary Living Room',
+      category: 'Interior',
       location: 'Chennai',
       area: '3500 sq.ft'
     },
     {
       id: 4,
       image: projectImage,
-      title: 'Office Complex',
-      category: 'Commercial',
+      title: 'Office Interior Design',
+      category: 'Interior',
       location: 'Pune',
       area: '15000 sq.ft'
     },
     {
       id: 5,
       image: projectImage,
-      title: 'Shopping Mall',
-      category: 'Commercial',
+      title: 'Residential Construction',
+      category: 'Working Projects',
       location: 'Mumbai',
       area: '25000 sq.ft'
     },
     {
       id: 6,
       image: projectImage,
-      title: 'Elegant Residence',
-      category: 'Residential',
+      title: 'Commercial Building',
+      category: 'Working Projects',
       location: 'Delhi',
       area: '4000 sq.ft'
+    },
+    {
+      id: 7,
+      image: projectImage,
+      title: 'Duplex House Plan',
+      category: 'Plan and Elevation',
+      location: 'Kolkata',
+      area: '3800 sq.ft'
+    },
+    {
+      id: 8,
+      image: projectImage,
+      title: 'Modern Kitchen Interior',
+      category: 'Interior',
+      location: 'Pune',
+      area: '800 sq.ft'
+    },
+    {
+      id: 9,
+      image: projectImage,
+      title: 'Ongoing Villa Project',
+      category: 'Working Projects',
+      location: 'Goa',
+      area: '5000 sq.ft'
     }
   ];
 
   const filteredProjects = filter === 'All' 
     ? projects 
     : projects.filter(project => project.category === filter);
+
+  const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, itemsToShow);
+
+  const handleLoadMore = () => {
+    setShowAll(!showAll);
+  };
 
   return (
     <section id="projects" className="projects">
@@ -76,24 +108,30 @@ const Projects = () => {
             className={filter === 'All' ? 'filter-btn active' : 'filter-btn'}
             onClick={() => setFilter('All')}
           >
-            All Projects
+            All
           </button>
           <button 
-            className={filter === 'Residential' ? 'filter-btn active' : 'filter-btn'}
-            onClick={() => setFilter('Residential')}
+            className={filter === 'Plan and Elevation' ? 'filter-btn active' : 'filter-btn'}
+            onClick={() => setFilter('Plan and Elevation')}
           >
-            Residential
+            Plan and Elevation
           </button>
           <button 
-            className={filter === 'Commercial' ? 'filter-btn active' : 'filter-btn'}
-            onClick={() => setFilter('Commercial')}
+            className={filter === 'Interior' ? 'filter-btn active' : 'filter-btn'}
+            onClick={() => setFilter('Interior')}
           >
-            Commercial
+            Interior
+          </button>
+          <button 
+            className={filter === 'Working Projects' ? 'filter-btn active' : 'filter-btn'}
+            onClick={() => setFilter('Working Projects')}
+          >
+            Working Projects
           </button>
         </div>
         
         <div className="projects-grid">
-          {filteredProjects.map((project) => (
+          {displayedProjects.map((project) => (
             <div key={project.id} className="project-card">
               <div className="project-image">
                 <img src={project.image} alt={project.title} />
@@ -109,6 +147,22 @@ const Projects = () => {
             </div>
           ))}
         </div>
+
+        {filteredProjects.length > itemsToShow && (
+          <div className="load-more-container">
+            <button className="load-more-btn" onClick={handleLoadMore}>
+              {showAll ? (
+                <>
+                  <i className="fas fa-chevron-up"></i> Show Less
+                </>
+              ) : (
+                <>
+                  <i className="fas fa-chevron-down"></i> Load More
+                </>
+              )}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

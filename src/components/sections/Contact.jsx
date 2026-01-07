@@ -48,7 +48,7 @@ const Contact = () => {
               <div className="info-icon"><i className="fas fa-map-marker-alt"></i></div>
               <div>
                 <h4>Address</h4>
-                <p>123 Construction Avenue, Bangalore, Karnataka - 560001</p>
+                <p>1st floor, sadha shivnagar, RG complex, BH Rd, Binnamangla, Sadashiva Nagara, Nagarur, Karnataka 562123</p>
               </div>
             </div>
             
@@ -66,7 +66,7 @@ const Contact = () => {
               <div className="info-icon"><i className="fas fa-envelope"></i></div>
               <div>
                 <h4>Email</h4>
-                <p>info@imprimisconstruction.com</p>
+                <p>imprimisbuilders@gmail.com</p>
                 <p>support@imprimisconstruction.com</p>
               </div>
             </div>
@@ -75,7 +75,7 @@ const Contact = () => {
               <div className="info-icon"><i className="fas fa-clock"></i></div>
               <div>
                 <h4>Working Hours</h4>
-                <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
+                <p>Monday - Saturday: 10:00 AM - 6:30 PM</p>
                 <p>Sunday: Closed</p>
               </div>
             </div>

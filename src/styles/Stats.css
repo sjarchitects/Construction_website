@@ -1,6 +1,6 @@
 .stats {
-  padding: 4rem 2rem;
-  background: #ff6b35;
+  padding: 1rem 2rem;
+  background: #D4AF37;
   color: white;
 }
 
@@ -18,7 +18,7 @@
 }
 
 .stat-number {
-  font-size: 4rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
   color: white;
