@@ -1,49 +1,112 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { ref, get, onValue } from 'firebase/database';
+import { database } from '../../firebase/config';
 import '../../styles/Services.css';
 
 const Services = () => {
-  const services = [
-    {
-      icon: 'fa-solid fa-house',
-      title: 'Residential Construction',
-      description: 'Complete residential construction services from foundation to finishing with quality craftsmanship'
-    },
-    {
-      icon: 'fa-solid fa-building',
-      title: 'Commercial Construction',
-      description: 'Professional commercial building construction with modern techniques and standards'
-    },
-    {
-      icon: 'fa-solid fa-compass-drafting',
-      title: 'Architectural Designing',
-      description: 'Innovative architectural design and planning services tailored to your vision'
-    },
-    {
-      icon: 'fa-solid fa-ruler-combined',
-      title: 'Structural Design',
-      description: 'Expert structural design and engineering solutions for safe and durable buildings'
+  const [loading, setLoading] = useState(true);
+  const [sectionHeader, setSectionHeader] = useState({
+    title: 'Our Services',
+    description: 'Comprehensive construction solutions for all your building needs'
+  });
+  const [serviceCards, setServiceCards] = useState([]);
+
+  useEffect(() => {
+    fetchServices();
+    
+    // Set up real-time listener for live updates
+    const servicesRef = ref(database, 'servicesContent/content');
+    const unsubscribe = onValue(servicesRef, (snapshot) => {
+      if (snapshot.exists()) {
+        const data = snapshot.val();
+        console.log('🔄 Services content real-time update:', data);
+        if (data.sectionHeader) setSectionHeader(data.sectionHeader);
+        if (data.serviceCards) setServiceCards(data.serviceCards);
+      }
+    }, (error) => {
+      console.error('❌ Services content real-time listener error:', error);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  const fetchServices = async () => {
+    try {
+      console.log('🔍 Loading Services content from Firebase...');
+      const servicesRef = ref(database, 'servicesContent/content');
+      const snapshot = await get(servicesRef);
+      
+      if (snapshot.exists()) {
+        const data = snapshot.val();
+        console.log('✅ Services content loaded:', data);
+        
+        if (data.sectionHeader) {
+          setSectionHeader(data.sectionHeader);
+        }
+        if (data.serviceCards) {
+          setServiceCards(data.serviceCards);
+        }
+      } else {
+        console.warn('⚠️ No services content found in Firebase');
+      }
+    } catch (error) {
+      console.error('❌ Error fetching services content:', error);
+    } finally {
+      setLoading(false);
     }
-  ];
+  };
+
+  if (loading) {
+    return (
+      <section id="services" className="services">
+        <div className="services-container">
+          <div className="section-header">
+            <h2 className="section-title">Loading...</h2>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (!serviceCards || serviceCards.length === 0) {
+    return (
+      <section id="services" className="services">
+        <div className="services-container">
+          <div className="section-header">
+            <h2 className="section-title">{sectionHeader.title}</h2>
+            <div className="title-underline"></div>
+            <p className="section-description">No services available at the moment.</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="services" className="services">
       <div className="services-container">
         <div className="section-header">
-          <h2 className="section-title">Our Services</h2>
+          <h2 className="section-title">{sectionHeader.title}</h2>
           <div className="title-underline"></div>
           <p className="section-description">
-            Comprehensive construction solutions for all your building needs
+            {sectionHeader.description}
           </p>
         </div>
         
         <div className="services-grid">
-          {services.map((service, index) => (
-            <div key={index} className="service-card">
+          {serviceCards.map((card) => (
+            <div key={card.id} className="service-card">
               <div className="service-icon-box">
-                <i className={service.icon}></i>
+                {card.iconType === 'image' && card.iconImage ? (
+                  <img src={card.iconImage} alt={card.title} style={{ width: '60px', height: '60px', objectFit: 'contain' }} />
+                ) : card.icon ? (
+                  <i className={card.icon}></i>
+                ) : (
+                  <i className="fa-solid fa-tools"></i>
+                )}
               </div>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
+              <h3>{card.title}</h3>
+              <p>{card.description}</p>
             </div>
           ))}
         </div>

@@ -12,10 +12,10 @@ const Stats = () => {
   const statsRef = useRef(null);
 
   const finalCounts = {
-    projects: 250,
-    clients: 500,
-    employees: 50,
-    experience: 15
+    projects: 25,
+    clients: 20,
+    // employees: 50,
+    experience: 10
   };
 
   useEffect(() => {
@@ -90,10 +90,10 @@ const Stats = () => {
           <div className="stat-number">{counts.clients}+</div>
           <div className="stat-label">Clients Served</div>
         </div>
-        <div className="stat-item">
+        {/* <div className="stat-item">
           <div className="stat-number">{counts.employees}+</div>
           <div className="stat-label">Team Members</div>
-        </div>
+        </div> */}
         <div className="stat-item">
           <div className="stat-number">{counts.experience}+</div>
           <div className="stat-label">Years of Experience</div>
